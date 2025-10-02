@@ -111,6 +111,91 @@ h1, h2, h3, h4 { font-family: var(--font-heading); }
 .card:hover { transform: translateY(-5px); }
 .card i { font-size: 2em; color: var(--color-accent); display: block; margin-bottom: 15px; }
 
+/* Estilo para a descrição da seção */
+.section-description {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 50px;
+    font-size: 1.1em;
+}
+
+/* Grade de Empresários (Semelhante aos Canais, mas com foco em Logotipos) */
+.empresarios-grid {
+    display: grid;
+    /* 3 colunas em desktop, responsivo para telas menores */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.business-card {
+    background-color: var(--color-card-bg);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s, border 0.3s;
+    border: 1px solid var(--color-card-bg); /* Borda sutil */
+}
+
+.business-card:hover {
+    transform: translateY(-5px);
+    border: 1px solid var(--color-accent); /* Borda laranja no hover para destaque */
+}
+
+/* Área do Logotipo */
+.business-logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px auto;
+    background-color: #333; /* Fundo do logo */
+    background-size: contain; /* Garante que o logo caiba */
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%; /* Opcional: logo redondo */
+}
+
+.business-card h3 {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.segmento {
+    color: var(--color-accent); /* Destaque laranja para o segmento */
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.contato {
+    color: #ccc;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+/* Botão CTA Menor (para caber no card) */
+.cta-button-small {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9em;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+.cta-button-small:hover {
+    background-color: #e65c00;
+}
+
+/* Responsividade para garantir que a grade funcione bem em mobile */
+@media (max-width: 600px) {
+    .empresarios-grid {
+        grid-template-columns: 1fr; /* Uma única coluna em telas muito pequenas */
+    }
+}
+
 /* -------------------------------------- */
 /* CONTEÚDO (Media Grid) */
 /* -------------------------------------- */
@@ -147,7 +232,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); }
 }
 .app-banner {
     background-color: var(--color-accent); /* Fundo laranja vivo */
-    padding: 80px 5%;
+    padding: 30px 5%;
     color: var(--color-dark);
 }
 .app-content {
@@ -157,9 +242,9 @@ h1, h2, h3, h4 { font-family: var(--font-heading); }
     max-width: 1200px;
     margin: 0 auto;
 }
-.app-mockup img { max-width: 350px; width: 100%; height: auto; }
+.app-mockup img { max-width: 200px; width: 100%; height: auto; }
 .app-text { flex: 1; }
-.app-links img { height: 40px; margin-right: 10px; }
+.app-links img { height: 140px; margin-right: 10px; }
 .app-features p { margin: 10px 0; font-weight: 500; }
 
 /* -------------------------------------- */
