@@ -30,54 +30,200 @@ h1, h2, h3, h4 { font-family: var(--font-heading); }
 .btn-link { color: var(--color-accent); text-align: center; display: block; margin-top: 30px; font-weight: bold; }
 
 /* -------------------------------------- */
-/* CABEÇALHO E NAVEGAÇÃO */
+/* CABEÇALHO UNIFICADO E NAVEGAÇÃO FIXA */
 /* -------------------------------------- */
-#top-bar {
-    background-color: var(--color-card-bg);
-    padding: 10px 5%;
-    display: flex;
-    justify-content: flex-end;
+
+/* REMOVE O ESTILO DA BARRA LARANJA ANTIGA (#top-bar) */
+/* Agora, o efeito é simulado com a borda do #main-header */
+
+/* FIXA O HEADER COMPLETO NO TOPO */
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    /* Borda laranja fina no topo para simular a Top Bar */
+    border-top: 5px solid var(--color-accent); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
 }
-.social-icons a { margin-left: 15px; font-size: 1.2em; }
+
+/* NAVEGAÇÃO PRINCIPAL (UNIFICADA E CENTRALIZADA) */
 #main-nav {
     background-color: var(--color-dark);
-    padding: 20px 5%;
+    padding: 15px 5%; /* Padding reduzido para um visual mais compacto */
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    /* CHAVE: Distribui o espaço entre os 3 blocos (Ícones, Menu, Login) */
+    justify-content: space-between; 
 }
+
+/* -------------------------------------- */
+/* BLOCO 1 & 3: ÍCONES E LOGIN */
+/* -------------------------------------- */
+
+/* Container dos ícones sociais (substitui o .social-icons antigo) */
+.header-social-icons {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Garante que não encolha */
+}
+
+/* Estilo dos ícones sociais (Fundo Laranja, Ícone Preto) */
+.header-social-icons a { 
+    background-color: var(--color-accent); 
+    color: var(--color-dark); 
+    font-size: 0.9em; 
+    padding: 5px;
+    border-radius: 50%; 
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px; 
+    transition: background-color 0.3s;
+}
+
+.header-social-icons a:hover {
+    background-color: #e65c00; 
+}
+
+/* Estilo do botão Login Laranja */
+.login-btn-top {
+    background-color: var(--color-accent); 
+    color: var(--color-dark); 
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.9em;
+    flex-shrink: 0; 
+    transition: background-color 0.3s;
+}
+
+.login-btn-top:hover {
+    background-color: #e65c00; 
+}
+
+/* -------------------------------------- */
+/* BLOCO 2: LINKS DE NAVEGAÇÃO (O Centro) */
+/* -------------------------------------- */
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    
+    /* CHAVE: Ocupa o espaço restante e centraliza os links */
+    flex-grow: 1; 
+    justify-content: center; 
+    margin: 0 20px; /* Evita que os links fiquem colados nos ícones/login */
+}
+.nav-links li a { 
+    color: white; 
+    text-decoration: none;
+    margin: 0 15px; 
+    padding: 5px 0;
+    transition: color 0.3s; 
+}
+.nav-links li a:hover { 
+    color: var(--color-accent); 
+}
+
+/* Os estilos de dropdown e menu mobile (menu-toggle) devem ser mantidos */
+/* ... */
+
 .logo { font-size: 1.8em; color: var(--color-accent); font-weight: bold; }
 .nav-links { list-style: none; display: flex; }
 .nav-links li a { margin-left: 30px; transition: color 0.3s; }
 .nav-links li a:hover { color: var(--color-accent); }
 .menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5em; cursor: pointer; }
 .dropdown { position: relative; }
-.dropdown-menu { display: none; position: absolute; top: 100%; background-color: var(--color-card-bg); min-width: 150px; list-style: none; padding: 10px 0; z-index: 10; }
-.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu { display: none; position: absolute; top: 100%; background-color: var(--color-card-bg); min-width: 150px; list-style: none; padding: 10px 0; z-index: 60; }
 .dropdown-menu a { display: block; padding: 5px 15px; margin: 0; }
+.dropdown:hover .dropdown-menu { display: block; }
 
 /* -------------------------------------- */
-/* SEÇÃO HERO */
+/* SEÇÃO HERO (CARROSSEL) */
 /* -------------------------------------- */
 .hero-section {
-    height: 80vh; /* Altura da primeira dobra */
+    position: relative; 
+    height: 85vh; /* Altura grande da primeira dobra */
+    width: 100%;
+    overflow: hidden; 
+}
+
+/* Container de slides que cobre toda a seção Hero */
+.slideshow-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo individual de cada slide (imagem) */
+.mySlides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
-    position: relative;
-    display: flex;
-    align-items: flex-end; /* Alinha o texto na parte de baixo */
+    opacity: 0; 
+    transition: opacity 1.5s ease-in-out; /* Transição suave entre as fotos */
 }
-.hero-overlay {
+
+/* O conteúdo fixo (texto e botões) que fica por cima */
+.hero-content {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; 
 }
+
+/* Área escura na parte inferior (para o texto ter contraste) */
+.hero-overlay-dark {
+    /* Gradiente transparente para preto para criar a área escura no fundo */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    padding-top: 200px; 
+    padding-bottom: 50px; 
+}
+
 .hero-text {
-    padding: 5%;
-    z-index: 2;
+    padding: 0 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: white;
 }
-.hero-text h1 { font-size: 3em; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-.hero-text p { font-size: 1.2em; }
+
+.hero-text h1 {
+    font-size: 3.5em;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.hero-ctas {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Estilos para os botões CTA */
+.primary-cta {
+    background-color: var(--color-accent); /* Laranja */
+    color: var(--color-dark);
+}
+
+.secondary-cta {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+}
 
 /* -------------------------------------- */
 /* BEM-VINDO / CANAIS */
@@ -248,12 +394,13 @@ h1, h2, h3, h4 { font-family: var(--font-heading); }
 .app-features p { margin: 10px 0; font-weight: 500; }
 
 /* -------------------------------------- */
-/* RODAPÉ */
+/* RODAPÉ (AJUSTADO PARA SER MAIS COMPACTO) */
 /* -------------------------------------- */
 #main-footer {
     background-color: var(--color-dark);
     border-top: 1px solid #333;
-    padding: 60px 5%;
+    /* REDUZIDO: Diminuído o padding vertical de 60px para 40px */
+    padding: 40px 5%; 
 }
 .footer-content {
     display: flex;
@@ -262,16 +409,54 @@ h1, h2, h3, h4 { font-family: var(--font-heading); }
     max-width: 1200px;
     margin: 0 auto;
 }
-.footer-logo { font-size: 2em; color: var(--color-accent); margin-bottom: 30px; }
-.footer-links { display: flex; gap: 50px; margin-right: 40px; }
-.link-column h4 { color: white; margin-bottom: 15px; }
+
+/* NOVO: Estilo para a IMAGEM da logo */
+.footer-logo-img {
+    /* AUMENTADO: Aumentando a altura da logo de 100px para 120px */
+    height: 120px; 
+    width: auto;
+    max-width: 100%;
+}
+
+/* CONTAINER DO LOGO: A margem inferior será controlada pelo padding do footer */
+.footer-logo { 
+    /* MUDADO: Reduzindo a margem inferior */
+    margin-bottom: 0px; 
+    min-width: 150px; 
+}
+
+
+.footer-links { display: flex; 
+    /* REDUZIDO: Espaçamento entre as colunas de links */
+    gap: 30px; 
+    margin-right: 20px; 
+}
+.link-column h4 { color: white; margin-bottom: 10px; }
 .link-column a, .footer-contato p, .footer-legal a {
     display: block;
     color: #aaa;
-    margin-bottom: 8px;
+    /* REDUZIDO: Menor espaçamento entre os links */
+    margin-bottom: 5px; 
     font-size: 0.9em;
 }
-.footer-legal { margin-top: 20px; }
+.footer-legal { margin-top: 15px; } /* REDUZIDO: Margem menor */
+
+/* REGRAS PARA RESPONSIVIDADE (Ajuste para Mobile) */
+@media (max-width: 768px) {
+    /* Mantendo a estrutura para telas menores, mas garantindo que o padding seja menor */
+    #main-footer { padding: 30px 5%; }
+    .footer-content {
+        flex-direction: column;
+    }
+    .footer-links {
+        flex-direction: column; 
+        gap: 20px; /* Redução em mobile */
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .footer-logo { width: 100%; margin-bottom: 20px; }
+    .footer-contato { margin-bottom: 10px; }
+}
 
 /* -------------------------------------- */
 /* RESPONSIVIDADE (Mobile First) */

@@ -4,44 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3ª IEQ CVEL</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="styles.css"> 
+
     <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
 </head>
+
 <body class="dark-theme">
 
-    <header id="main-header">
-        <div id="top-bar">
-            <div class="social-icons">
-                <a href="#"><i class="icon-fa">F</i></a>
-                <a href="#"><i class="icon-in">I</i></a>
-                <a href="#"><i class="icon-sp">S</i></a>
-            </div>
-            <a href="#" class="login-btn cta-button">Login</a>
+<header id="main-header">
+    
+    <nav id="main-nav">
+        
+        <div class="header-social-icons">
+            <a href="https://www.facebook.com/share/1Bcbkekdwa/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/3ieqcvel?igsh=MXcydWFqMW1ieGIzdw==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@3ieqcvel625?si=MlmcOVMGukm-Qpf-" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
+        
+        <ul class="nav-links">
+            <li><a href="#">É Novo Aqui?</a></li>
+            <li class="dropdown"><a href="#">Nossas Igrejas ▼</a>
+                <ul class="dropdown-menu"><li><a href="#">Volta Redonda</a></li><li><a href="#">Cidade B</a></li></ul>
+            </li>
+            <li class="dropdown"><a href="#">Conteúdo ▼</a>
+                <ul class="dropdown-menu"><li><a href="#">Séries</a></li><li><a href="#">Palavras</a></li></ul>
+            </li>
+            <li><a href="#">Agenda</a></li>
+            <li><a href="#">Faça Parte</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+        
+        <a href="https://www.atos6.com/users/sign_in" class="login-btn-top" target="_blank">Login</a>
+        
+        <button class="menu-toggle">☰</button>
+    </nav>
+</header>
 
-        <nav id="main-nav">
-            <div class="logo">3ª IEQ CASCAVEL</div>
-            <ul class="nav-links">
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Quem Somos</a></li>
-                <li class="dropdown">
-                    <a href="#">Conteúdo ▼</a>
-                    <ul class="dropdown-menu"><li><a href="#">Séries</a></li><li><a href="#">Palavras</a></li></ul>
-                </li>
-                <li><a href="#">Agenda</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-            <button class="menu-toggle">☰</button>
-        </nav>
-    </header>
-
-    <section id="hero" class="hero-section" style="background-image: url('hero-fundo.jpg');">
-        <div class="hero-overlay">
+    <section id="hero" class="hero-section">
+    <div class="slideshow-container">
+        <div class="mySlides fade" style="background-image: url('slide1-culto.jpg');"></div>
+        <div class="mySlides fade" style="background-image: url('slide2-adoracao.jpg');"></div>
+        <div class="mySlides fade" style="background-image: url('slide3-comunidade.jpg');"></div>
+    </div>
+    
+    <div class="hero-content">
+        <div class="hero-overlay-dark">
             <div class="hero-text">
-                <h1>CULTO PRINCIPAL SEU PROJETO</h1>
-                <p>VOLTA REDONDA: DOMINGO, 10H, 17H e 19H | QUARTA: 19H</p>
+                <h1>ESTAMOS FAZENDO UMA GRANDE OBRA</h1>
+                <p>E NÃO PODEMOS PARAR CÉLULA</p>
+                
+                <div class="hero-ctas">
+                    <a href="#" class="cta-button primary-cta">Planeje Sua Visita</a>
+                </div>
             </div>
         </div>
+    </div>
     </section>
 
     <section id="bem-vindo" class="content-section centered-text">
@@ -50,14 +74,14 @@
                 <h4>BEM-VINDO À NOSSA CASA</h4>
                 <h2>"Nossa paixão é por vidas!"</h2>
                 <p>Amamos pessoas, valorizamos pessoas, servimos pessoas, acreditamos nas pessoas.</p>
-                <p class="author">- Seu Nome/Líder</p>
+                <p class="author">- Pastora Suely</p>
                 <div class="social-links">
                     <a href="#" class="icon-fa">F</a>
                     <a href="#" class="icon-in">I</a>
                     </div>
             </div>
             <div class="image-block">
-                <img src="lider-foto.jpg" alt="Foto do Líder" class="responsive-img">
+                <img src="foto_pastora.jpg" alt="Foto do Líder" class="responsive-img">
             </div>
         </div>
     </section>
@@ -176,7 +200,9 @@
 
     <footer id="main-footer">
         <div class="footer-content">
-            <div class="footer-logo">Seu Projeto</div>
+            <div class="footer-logo">
+                <img src="Logo_Quadrangular.png" alt="Logo da 3ª IEQ CVEL" class="footer-logo-img">
+            </div>
             <div class="footer-links">
                 <div class="link-column">
                     <h4>Navegação</h4>
