@@ -1,0 +1,234 @@
+/* Variáveis e Reset Básico */
+:root {
+    --color-dark: #121212;
+    --color-text-light: #f0f0f0;
+    --color-accent: #ff6600; /* Laranja */
+    --color-card-bg: #222222;
+    --font-heading: 'Montserrat', sans-serif; 
+    --font-body: 'Roboto', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background-color: var(--color-dark);
+    color: var(--color-text-light);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+a { text-decoration: none; color: white; }
+h1, h2, h3, h4 { font-family: var(--font-heading); }
+.content-section { padding: 80px 5%; }
+.cta-button {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+.cta-button:hover { background-color: #e65c00; }
+.btn-link { color: var(--color-accent); text-align: center; display: block; margin-top: 30px; font-weight: bold; }
+
+/* -------------------------------------- */
+/* CABEÇALHO E NAVEGAÇÃO */
+/* -------------------------------------- */
+#top-bar {
+    background-color: var(--color-card-bg);
+    padding: 10px 5%;
+    display: flex;
+    justify-content: flex-end;
+}
+.social-icons a { margin-left: 15px; font-size: 1.2em; }
+#main-nav {
+    background-color: var(--color-dark);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo { font-size: 1.8em; color: var(--color-accent); font-weight: bold; }
+.nav-links { list-style: none; display: flex; }
+.nav-links li a { margin-left: 30px; transition: color 0.3s; }
+.nav-links li a:hover { color: var(--color-accent); }
+.menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5em; cursor: pointer; }
+.dropdown { position: relative; }
+.dropdown-menu { display: none; position: absolute; top: 100%; background-color: var(--color-card-bg); min-width: 150px; list-style: none; padding: 10px 0; z-index: 10; }
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; padding: 5px 15px; margin: 0; }
+
+/* -------------------------------------- */
+/* SEÇÃO HERO */
+/* -------------------------------------- */
+.hero-section {
+    height: 80vh; /* Altura da primeira dobra */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end; /* Alinha o texto na parte de baixo */
+}
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+}
+.hero-text {
+    padding: 5%;
+    z-index: 2;
+}
+.hero-text h1 { font-size: 3em; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+.hero-text p { font-size: 1.2em; }
+
+/* -------------------------------------- */
+/* BEM-VINDO / CANAIS */
+/* -------------------------------------- */
+.bem-vindo-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.bem-vindo-content .text-block { flex: 1; }
+.bem-vindo-content .image-block { flex: 1; }
+.responsive-img { width: 100%; height: auto; border-radius: 5px; }
+.author { color: var(--color-accent); font-weight: bold; margin-top: 10px; }
+/* Cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+.card {
+    background-color: var(--color-card-bg);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-5px); }
+.card i { font-size: 2em; color: var(--color-accent); display: block; margin-bottom: 15px; }
+
+/* -------------------------------------- */
+/* CONTEÚDO (Media Grid) */
+/* -------------------------------------- */
+.media-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Grande e uma coluna lateral */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+.media-card {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+.side-cards { display: flex; flex-direction: column; gap: 20px; }
+.side-cards .small-card { height: 190px; } /* Metade da altura do principal */
+.overlay-text { padding: 20px; background: rgba(0,0,0,0.6); width: 100%; }
+.tag { background-color: var(--color-accent); color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.8em; margin-bottom: 5px; display: inline-block; }
+
+/* -------------------------------------- */
+/* BANNER CONTRIBUA & APP (Laranja) */
+/* -------------------------------------- */
+.banner-section {
+    text-align: center;
+    padding: 100px 5%;
+    background-color: #aa5100; /* Cor de fundo para o banner de doação */
+    color: white;
+}
+.app-banner {
+    background-color: var(--color-accent); /* Fundo laranja vivo */
+    padding: 80px 5%;
+    color: var(--color-dark);
+}
+.app-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.app-mockup img { max-width: 350px; width: 100%; height: auto; }
+.app-text { flex: 1; }
+.app-links img { height: 40px; margin-right: 10px; }
+.app-features p { margin: 10px 0; font-weight: 500; }
+
+/* -------------------------------------- */
+/* RODAPÉ */
+/* -------------------------------------- */
+#main-footer {
+    background-color: var(--color-dark);
+    border-top: 1px solid #333;
+    padding: 60px 5%;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer-logo { font-size: 2em; color: var(--color-accent); margin-bottom: 30px; }
+.footer-links { display: flex; gap: 50px; margin-right: 40px; }
+.link-column h4 { color: white; margin-bottom: 15px; }
+.link-column a, .footer-contato p, .footer-legal a {
+    display: block;
+    color: #aaa;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+.footer-legal { margin-top: 20px; }
+
+/* -------------------------------------- */
+/* RESPONSIVIDADE (Mobile First) */
+/* -------------------------------------- */
+@media (max-width: 900px) {
+    /* Menu Mobile */
+    .nav-links { display: none; }
+    .nav-links.active {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-dark);
+        text-align: center;
+        border-top: 1px solid #333;
+    }
+    .nav-links li { border-bottom: 1px solid #333; }
+    .nav-links li a { display: block; padding: 15px 0; margin: 0; }
+    .menu-toggle { display: block; }
+    
+    /* Layouts Flex e Grid */
+    .bem-vindo-content, .media-grid, .app-content, .footer-content {
+        flex-direction: column;
+    }
+    .media-grid { grid-template-columns: 1fr; }
+    .side-cards { flex-direction: row; }
+    .side-cards .small-card { height: 250px; }
+    .app-mockup { order: -1; } /* Coloca a imagem do app acima do texto */
+    
+    /* Rodapé */
+    .footer-links { flex-direction: column; gap: 30px; }
+    .footer-contato, .footer-logo, .footer-links { width: 100%; margin-bottom: 30px; }
+}
+
+/* Adicione no final do seu arquivo styles.css */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
