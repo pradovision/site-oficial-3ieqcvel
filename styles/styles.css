@@ -564,3 +564,213 @@ h1, h2, h3, h4 { font-family: var(--font-heading); }
     opacity: 1;
     transform: translateY(0);
 }
+
+/* -------------------------------------- */
+/* ESTILOS DE PÁGINAS SECUNDÁRIAS */
+/* -------------------------------------- */
+
+/* Seção de Título de Páginas (Ex: QUEM SOMOS) */
+.page-hero {
+    background-color: var(--color-card-bg); /* Um tom mais claro que o fundo principal */
+    padding: 100px 5% 50px 5%; /* Padding superior e inferior */
+    text-align: center;
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.page-hero h1 {
+    font-size: 3em;
+    color: var(--color-accent);
+    margin: 0;
+}
+
+.page-hero p {
+    font-size: 1.2em;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+/* -------------------------------------- */
+/* CARDS MVV (MISSÃO, VISÃO, VALORES) */
+/* -------------------------------------- */
+.cards-mvv-grid {
+    display: grid;
+    /* 3 colunas em telas grandes */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.mvv-card {
+    background-color: var(--color-card-bg);
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    border-top: 5px solid var(--color-accent); /* Borda laranja no topo */
+}
+
+.mvv-card i {
+    font-size: 3em;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+}
+
+.mvv-card h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+/* -------------------------------------- */
+/* SEÇÃO HISTÓRIA */
+/* -------------------------------------- */
+.dark-bg-2 {
+    background-color: #1c1c1c; /* Fundo ligeiramente diferente para contraste */
+}
+.history-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+.history-image {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    flex-shrink: 0; /* Impede que a imagem encolha */
+}
+.history-text {
+    flex-grow: 1;
+}
+
+/* Responsividade da seção História */
+@media (max-width: 768px) {
+    .history-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* -------------------------------------- */
+/* AJUSTES DE TIPOGRAFIA PARA BIOGRAFIA/HISTÓRIA */
+/* -------------------------------------- */
+
+/* Estilo para Títulos/Subtítulos (ex: 'A Força da Família...') */
+.history-text h3 {
+    font-size: 1.6em;
+    /* CHAVE: Títulos de seção em LARANJA para separação */
+    color: var(--color-accent); 
+    text-align: left;
+    margin-top: 30px; 
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333; 
+    padding-bottom: 5px;
+}
+
+/* Estilo do Parágrafo (COR e ESPAÇAMENTO) */
+.history-text p {
+    font-size: 1.1em;
+    /* CHAVE 1: Cor cinza claro (#ccc) para suavizar a leitura no fundo preto */
+    color: #ccc; 
+    /* CHAVE 2: Aumenta o espaçamento entre linhas (legibilidade) */
+    line-height: 1.7; 
+    /* CHAVE 3: Espaçamento entre parágrafos (linha vazia) */
+    margin-bottom: 20px; 
+}
+
+/* Estilo para Citações (Quotes) */
+.history-text .quote {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--color-accent); /* Citação em LARANJA para destaque */
+    border-left: 3px solid var(--color-accent); /* Linha vertical laranja */
+    padding-left: 15px;
+    margin: 25px 0;
+}
+
+/* Garante que o alinhamento de texto em mobile seja aplicado aos subtítulos também */
+@media (max-width: 768px) {
+    .history-text h3 {
+        text-align: center;
+    }
+}
+
+/* -------------------------------------- */
+/* CARDS DOS PASTORES (NOSSOS PASTORES) */
+/* -------------------------------------- */
+
+.pastor-card-grid {
+    display: grid;
+    /* CHAVE: 4 colunas em telas grandes (para 8 pastores em 2 linhas) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.pastor-card {
+    background-color: var(--color-card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.pastor-card:hover {
+    transform: translateY(-5px); /* Efeito de leve elevação no hover */
+}
+
+.pastor-photo {
+    width: 100%;
+    max-width: 200px; /* Limita o tamanho da foto */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%; /* Foto circular */
+    border: 5px solid var(--color-accent);
+    margin: 0 auto 20px auto;
+    display: block;
+}
+
+.pastor-info h3 {
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.pastor-info .role {
+    color: var(--color-accent); /* Cor Laranja para o cargo */
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.pastor-info .description {
+    color: #ccc;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    min-height: 40px; /* Garante altura mínima para alinhamento */
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.2em;
+    margin: 0 8px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--color-accent);
+}
+
+/* Responsividade: Volta para 2 colunas em telas menores */
+@media (max-width: 1100px) {
+    .pastor-card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}

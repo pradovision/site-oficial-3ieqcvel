@@ -11,9 +11,9 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles/styles.css"> 
 
-    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/logos/logo.ico" type="image/x-icon">
 </head>
 
 <body class="dark-theme">
@@ -29,7 +29,17 @@
         </div>
         
         <ul class="nav-links">
-            <li><a href="#">É Novo Aqui?</a></li>
+            <li><a href="index.html">Início</a></li>
+            <li class="dropdown">
+                <a href="#">É Novo Aqui? ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li><a href="#nossos-cultos">Nossos Cultos</a></li>
+                    <li><a href="nossos-pastores.html">Nossos Pastores</a></li>
+                    <li><a href="#nossos-supervisores">Nossos Supervisores</a></li>
+                    <li><a href="#ensino">Ensino</a></li>
+                </ul>
+            </li>
             <li class="dropdown"><a href="#">Nossas Células ▼</a>
                 <ul class="dropdown-menu"><li><a href="#">Rede Ebenézer 1</a></li><li><a href="#">Rede Ebenézer 2</a></li><li><a href="#">Rede Flecha no Alvo</a></li><li><a href="#">Rede Deus Conosco</a></li></ul>
             </li>
@@ -49,16 +59,16 @@
 
     <section id="hero" class="hero-section">
     <div class="slideshow-container">
-        <div class="mySlides fade" style="background-image: url('slide1-culto.jpg');"></div>
-        <div class="mySlides fade" style="background-image: url('slide2-adoracao.jpg');"></div>
-        <div class="mySlides fade" style="background-image: url('slide3-comunidade.jpg');"></div>
+        <div class="mySlides fade" style="background-image: url('assets/slides/slide1-culto.jpg');"></div>
+        <div class="mySlides fade" style="background-image: url('assets/slides/slide2-adoracao.jpg');"></div>
+        <div class="mySlides fade" style="background-image: url('assets/slides/slide3-comunidade.jpg');"></div>
     </div>
     
     <div class="hero-content">
         <div class="hero-overlay-dark">
             <div class="hero-text">
-                <h1>ESTAMOS FAZENDO UMA GRANDE OBRA</h1>
-                <p>E NÃO PODEMOS PARAR CÉLULA</p>
+                <h1>IGREJA EM CÉLULAS</h1>
+                <p>Estamos fazendo uma grande obra e não podemos parar - CÉLULA</p>
                 
                 <div class="hero-ctas">
                     <a href="#" class="cta-button primary-cta">Planeje Sua Visita</a>
@@ -81,7 +91,7 @@
                     </div>
             </div>
             <div class="image-block">
-                <img src="foto_pastora.jpg" alt="Foto do Líder" class="responsive-img">
+                <img src="assets/imagens/foto_pastora.jpg" alt="Foto do Líder" class="responsive-img">
             </div>
         </div>
     </section>
@@ -111,7 +121,7 @@
     <div class="empresarios-grid">
         
         <div class="business-card">
-            <div class="business-logo" style="background-image: url('logo_prado_vision.png');"></div>
+            <div class="business-logo" style="background-image: url('assets/logos/logo_prado_vision.png');"></div>
             <h3>Prado Vision</h3>
             <p class="segmento">Segmento: Consultoria Tecnológica</p>
             <p class="contato">Contato: (45) 9 9961-4886</p>
@@ -188,12 +198,12 @@
                     <p>📖 Tenha a Bíblia no seu bolso.</p>
                 </div>
                 <div class="app-links">
-                    <a href="https://play.google.com/store/apps/details?id=br.com.raise.app10693&pcampaignid=web_share"><img src="google-play.png" alt="Google Play"></a>
-                    <a href="#"><img src="app-store.png" alt="App Store"></a>
+                    <a href="https://play.google.com/store/apps/details?id=br.com.raise.app10693&pcampaignid=web_share"><img src="assets/imagens/google-play.png" alt="Google Play"></a>
+                    <a href="#"><img src="assets/imagens/app-store.png" alt="App Store"></a>
                 </div>
             </div>
             <div class="app-mockup">
-                <img src="celular-mockup.png" alt="Mockup do Aplicativo">
+                <img src="assets/imagens/celular-mockup.png" alt="Mockup do Aplicativo">
             </div>
         </div>
     </section>
@@ -201,7 +211,7 @@
     <footer id="main-footer">
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="Logo_Quadrangular.png" alt="Logo da 3ª IEQ CVEL" class="footer-logo-img">
+                <img src="assets/logos/Logo_Quadrangular.png" alt="Logo da 3ª IEQ CVEL" class="footer-logo-img">
             </div>
             <div class="footer-links">
                 <div class="link-column">
@@ -230,7 +240,7 @@
                     <div class="footer-col developer-credits">
                 <h4>Desenvolvimento</h4>
                 
-                    <img src="logo_prado_vision.png" alt="Logo Prado Vision" class="dev-logo">
+                    <img src="assets/logos/logo_prado_vision.png" alt="Logo Prado Vision" class="dev-logo">
                     <p class="dev-text">Leandro Prado</p> 
                 </a>
 
@@ -250,6 +260,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
