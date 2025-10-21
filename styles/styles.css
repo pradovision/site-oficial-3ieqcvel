@@ -21,6 +21,7 @@ body {
     color: var(--color-text-light);
     font-family: var(--font-body);
     line-height: 1.6;
+    /* Compensa o espaço ocupado pelo header fixo (70px) */
     padding-top: 70px; 
 }
 
@@ -34,6 +35,7 @@ h1, h2, h3, h4 {
     font-family: var(--font-heading); 
 }
 
+/* Estilos Globais de Seção e Botões */
 .content-section { 
     padding: 80px 5%; 
 }
@@ -318,6 +320,87 @@ h1, h2, h3, h4 {
     margin-bottom: 10px;
 }
 
+/* ====================================== */
+/* AJUSTE FINAL DA SEÇÃO APP (#app) */
+/* ====================================== */
+
+#app {
+    background-color: var(--color-dark); /* Fundo preto principal */
+    padding: 60px 5%; /* Padding menor para compactar */
+    color: var(--color-text-light); 
+}
+
+/* Container principal (Texto e Mockup lado a lado) */
+.app-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.app-text { 
+    flex: 1;
+    max-width: 50%;
+}
+
+.app-text h2 {
+    font-size: 2em;
+    text-align: left;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Redução do espaçamento das features */
+.app-features {
+    margin-top: 20px;
+    margin-bottom: 20px; 
+    font-size: 1em;
+    color: #ccc;
+}
+.app-features p {
+    margin-bottom: 5px; 
+}
+
+/* Mockup e Imagens */
+.app-mockup {
+    flex-shrink: 0;
+    text-align: right;
+}
+
+/* CHAVE 1: Reduz o tamanho do Mockup do Celular */
+.app-mockup img { 
+    max-width: 250px; /* Tamanho final ideal para destaque */
+    height: auto;
+    display: block;
+}
+
+/* CHAVE 2: Reduz o tamanho dos botões Google Play/App Store */
+.app-links img { 
+    height: 190px; /* Altura ideal dos botões */
+    width: auto;
+    margin-right: 15px;
+    transition: opacity 0.3s;
+}
+
+/* Responsividade (Reconfirmação) */
+@media (max-width: 768px) {
+    .app-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .app-text {
+        max-width: 100%;
+    }
+    .app-text h2 {
+        text-align: center;
+    }
+    .app-mockup {
+        order: -1; 
+        margin-bottom: 30px;
+    }
+}
 
 /* ====================================== */
 /* 5. ESTILOS DE PÁGINAS SECUNDÁRIAS */
@@ -476,6 +559,37 @@ h1, h2, h3, h4 {
 }
 .dev-social-icons a:hover {
     color: var(--color-accent);
+}
+
+
+/* -------------------------------------- */
+/* AJUSTES FINAIS DE COR E COPYRIGHT (NOVO) */
+/* -------------------------------------- */
+
+/* Cores Brancas para Títulos e Contato */
+.footer-contato h4 {
+    color: white; 
+    margin-bottom: 10px;
+}
+
+.developer-credits h4 {
+    color: white; 
+    margin-bottom: 10px;
+}
+
+/* Centralização do Copyright */
+.copyright {
+    width: 100%; 
+    text-align: center; 
+    color: white; 
+    padding: 20px 0; 
+    border-top: 1px solid #333; 
+    margin-top: 20px;
+}
+
+.copyright p {
+    font-size: 0.9em;
+    margin: 0;
 }
 
 
