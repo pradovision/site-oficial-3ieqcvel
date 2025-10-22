@@ -72,11 +72,9 @@ h1, h2, h3, h4 {
 }
 
 /* -------------------------------------- */
-/* CORREÇÃO GLOBAL: TÍTULOS H2 (APLICADO EM CONTENT-SECTION E OUTROS) */
+/* CORREÇÃO GLOBAL: TÍTULOS H2 */
 /* -------------------------------------- */
-
-/* Esta regra garante que todos os títulos H2 de seção fiquem BRANCOS */
-.content-section h2, .banner-section h2 { /* Regra combinada */
+.content-section h2, .banner-section h2 { 
     color: white; 
     text-align: center;
     font-size: 2.5em; 
@@ -255,7 +253,7 @@ h1, h2, h3, h4 {
 .card:hover { transform: translateY(-5px); }
 .card i { font-size: 2em; color: var(--color-accent); display: block; margin-bottom: 15px; }
 
-/* Estilos de cor e alinhamento do texto DENTRO dos Cards */
+/* Estilos de cor e alinhamento do texto DENTRO dos Cards de Canais */
 .card h3 {
     color: white; /* Título BRANCO */
     font-size: 1.5em;
@@ -323,6 +321,12 @@ h1, h2, h3, h4 {
     text-align: center;
     transition: transform 0.3s, border 0.3s;
     border: 1px solid var(--color-card-bg); 
+    
+    /* CHAVE 1: Ativa o Flexbox para alinhamento vertical */
+    display: flex;
+    flex-direction: column;
+    /* CHAVE 2: Garante que o botão vá para o fundo */
+    justify-content: space-between;
 }
 .business-card:hover {
     transform: translateY(-5px);
@@ -337,17 +341,28 @@ h1, h2, h3, h4 {
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 50%;
+    flex-shrink: 0; 
 }
 .business-card h3 {
     color: white;
     font-size: 1.5em;
     margin-bottom: 5px;
 }
+.business-text-wrapper { 
+    flex-grow: 1; /* Força o bloco de texto a preencher o espaço */
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
 .segmento {
-    color: var(--color-accent); 
+    color: var(--color-accent); /* MANTIDO: Segmento em Laranja */
     font-weight: bold;
     font-size: 0.9em;
     margin-bottom: 10px;
+}
+.contato {
+    color: #ccc; /* CORRIGIDO: Cor cinza claro (estava escuro) */
+    font-size: 0.9em;
+    line-height: 1.5;
 }
 
 
@@ -531,39 +546,39 @@ h1, h2, h3, h4 {
 
 #app {
     background-color: var(--color-dark); 
-    padding: 60px 5%; 
+    padding: 80px 5%; /* Padding ajustado para melhor "respiro" */
     color: var(--color-text-light); 
 }
 
 .app-content {
     display: flex;
     align-items: center;
-    justify-content: space-between; 
+    justify-content: space-around; /* Ajustado para melhor espaçamento */
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .app-text { 
-    flex: 1;
-    max-width: 50%;
+    max-width: 600px; /* Aumentado para melhor proporção */
+    flex-shrink: 0;
 }
 
 .app-text h2 {
-    font-size: 2em;
+    font-size: 2.5em; /* Aumentado para destaque */
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: white;
 }
 
 .app-features {
     margin-top: 20px;
     margin-bottom: 20px; 
-    font-size: 1em;
-    color: #ccc;
+    font-size: 1.1em; /* Fonte um pouco maior */
+    color: white; /* Corrigido para branco puro */
 }
 .app-features p {
-    margin-bottom: 5px; 
+    margin-bottom: 8px; /* Espaçamento entre as features */
 }
 
 .app-mockup {
@@ -578,7 +593,7 @@ h1, h2, h3, h4 {
 }
 
 .app-links img { 
-    height: 55px; /* CORRIGIDO: Tamanho final e proporcional */
+    height: 55px; /* CORREÇÃO FINAL: Tamanho ideal dos botões */
     width: auto;
     margin-right: 15px;
     transition: opacity 0.3s;
@@ -601,6 +616,7 @@ h1, h2, h3, h4 {
         margin-bottom: 30px;
     }
 }
+
 
 /* -------------------------------------- */
 /* AJUSTES FINAIS DE COR E COPYRIGHT */
