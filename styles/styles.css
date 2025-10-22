@@ -21,7 +21,6 @@ body {
     color: var(--color-text-light);
     font-family: var(--font-body);
     line-height: 1.6;
-    /* Compensa o espaço ocupado pelo header fixo (70px) */
     padding-top: 70px; 
 }
 
@@ -72,6 +71,18 @@ h1, h2, h3, h4 {
     font-size: 1.1em;
 }
 
+/* -------------------------------------- */
+/* CORREÇÃO GLOBAL: TÍTULOS H2 (APLICADO EM CONTENT-SECTION E OUTROS) */
+/* -------------------------------------- */
+
+/* Esta regra garante que todos os títulos H2 de seção fiquem BRANCOS */
+.content-section h2, .banner-section h2 { /* Regra combinada */
+    color: white; 
+    text-align: center;
+    font-size: 2.5em; 
+    margin-bottom: 40px;
+    margin-top: 0; 
+}
 
 /* ====================================== */
 /* 2. CABEÇALHO FIXO E NAVEGAÇÃO */
@@ -220,7 +231,7 @@ h1, h2, h3, h4 {
 
 
 /* ====================================== */
-/* 4. LAYOUTS DE GRADES E CARDS */
+/* 4. LAYOUTS DE GRADES E CARDS (CANAIS E EMPRESÁRIOS) */
 /* ====================================== */
 .card-grid {
     display: grid;
@@ -235,9 +246,28 @@ h1, h2, h3, h4 {
     padding: 30px;
     text-align: center;
     transition: transform 0.3s;
+    
+    /* CHAVE: Alinhamento vertical forçado para o botão CTA */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
 }
 .card:hover { transform: translateY(-5px); }
 .card i { font-size: 2em; color: var(--color-accent); display: block; margin-bottom: 15px; }
+
+/* Estilos de cor e alinhamento do texto DENTRO dos Cards */
+.card h3 {
+    color: white; /* Título BRANCO */
+    font-size: 1.5em;
+    margin-bottom: 10px; 
+}
+.card p {
+    color: #ccc; /* Parágrafo CINZA CLARO */
+    font-size: 1em;
+    line-height: 1.5;
+    flex-grow: 1; /* Preenche o espaço, empurrando o CTA para baixo */
+    margin-bottom: 20px; 
+}
 
 /* Seção Bem-Vindo */
 .bem-vindo-content {
@@ -320,87 +350,6 @@ h1, h2, h3, h4 {
     margin-bottom: 10px;
 }
 
-/* ====================================== */
-/* AJUSTE FINAL DA SEÇÃO APP (#app) */
-/* ====================================== */
-
-#app {
-    background-color: var(--color-dark); /* Fundo preto principal */
-    padding: 60px 5%; /* Padding menor para compactar */
-    color: var(--color-text-light); 
-}
-
-/* Container principal (Texto e Mockup lado a lado) */
-.app-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.app-text { 
-    flex: 1;
-    max-width: 50%;
-}
-
-.app-text h2 {
-    font-size: 2em;
-    text-align: left;
-    margin-bottom: 20px;
-    color: white;
-}
-
-/* Redução do espaçamento das features */
-.app-features {
-    margin-top: 20px;
-    margin-bottom: 20px; 
-    font-size: 1em;
-    color: #ccc;
-}
-.app-features p {
-    margin-bottom: 5px; 
-}
-
-/* Mockup e Imagens */
-.app-mockup {
-    flex-shrink: 0;
-    text-align: right;
-}
-
-/* CHAVE 1: Reduz o tamanho do Mockup do Celular */
-.app-mockup img { 
-    max-width: 250px; /* Tamanho final ideal para destaque */
-    height: auto;
-    display: block;
-}
-
-/* CHAVE 2: Reduz o tamanho dos botões Google Play/App Store */
-.app-links img { 
-    height: 190px; /* Altura ideal dos botões */
-    width: auto;
-    margin-right: 15px;
-    transition: opacity 0.3s;
-}
-
-/* Responsividade (Reconfirmação) */
-@media (max-width: 768px) {
-    .app-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    .app-text {
-        max-width: 100%;
-    }
-    .app-text h2 {
-        text-align: center;
-    }
-    .app-mockup {
-        order: -1; 
-        margin-bottom: 30px;
-    }
-}
 
 /* ====================================== */
 /* 5. ESTILOS DE PÁGINAS SECUNDÁRIAS */
@@ -409,7 +358,7 @@ h1, h2, h3, h4 {
 /* Seção Título (Ex: QUEM SOMOS) */
 .page-hero {
     background-color: var(--color-card-bg); 
-    padding: 100px 5% 50px 5%; 
+    padding: 120px 5% 50px 5%; 
     text-align: center;
     border-bottom: 2px solid var(--color-accent);
 }
@@ -418,6 +367,13 @@ h1, h2, h3, h4 {
     color: var(--color-accent);
     margin: 0;
 }
+/* CORREÇÃO: Parágrafo do page-hero */
+.page-hero p {
+    color: white; 
+    margin-top: 10px; 
+    font-size: 1.2em; 
+}
+
 
 /* Biografia/História (Texto e Foto) */
 .history-content {
@@ -483,6 +439,14 @@ h1, h2, h3, h4 {
     font-weight: bold;
     font-size: 1em;
     margin-bottom: 15px;
+}
+
+/* CORREÇÃO COR MVV */
+.mvv-card h3 {
+    color: white; 
+}
+.mvv-card p {
+    color: #ccc; 
 }
 
 
@@ -561,12 +525,87 @@ h1, h2, h3, h4 {
     color: var(--color-accent);
 }
 
+/* ====================================== */
+/* 7. AJUSTE FINAL DA SEÇÃO APP (#app) */
+/* ====================================== */
+
+#app {
+    background-color: var(--color-dark); 
+    padding: 60px 5%; 
+    color: var(--color-text-light); 
+}
+
+.app-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.app-text { 
+    flex: 1;
+    max-width: 50%;
+}
+
+.app-text h2 {
+    font-size: 2em;
+    text-align: left;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.app-features {
+    margin-top: 20px;
+    margin-bottom: 20px; 
+    font-size: 1em;
+    color: #ccc;
+}
+.app-features p {
+    margin-bottom: 5px; 
+}
+
+.app-mockup {
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.app-mockup img { 
+    max-width: 250px; 
+    height: auto;
+    display: block;
+}
+
+.app-links img { 
+    height: 55px; /* CORRIGIDO: Tamanho final e proporcional */
+    width: auto;
+    margin-right: 15px;
+    transition: opacity 0.3s;
+}
+
+/* Responsividade (Reconfirmação) */
+@media (max-width: 768px) {
+    .app-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .app-text {
+        max-width: 100%;
+    }
+    .app-text h2 {
+        text-align: center;
+    }
+    .app-mockup {
+        order: -1; 
+        margin-bottom: 30px;
+    }
+}
 
 /* -------------------------------------- */
-/* AJUSTES FINAIS DE COR E COPYRIGHT (NOVO) */
+/* AJUSTES FINAIS DE COR E COPYRIGHT */
 /* -------------------------------------- */
 
-/* Cores Brancas para Títulos e Contato */
 .footer-contato h4 {
     color: white; 
     margin-bottom: 10px;
@@ -577,7 +616,6 @@ h1, h2, h3, h4 {
     margin-bottom: 10px;
 }
 
-/* Centralização do Copyright */
 .copyright {
     width: 100%; 
     text-align: center; 
@@ -599,7 +637,7 @@ h1, h2, h3, h4 {
 
 /* Menu Hamburger e Grids em Tablet */
 @media (max-width: 900px) {
-    /* CABEÇALHO - Esconde links e mostra hamburger */
+    /* CABEÇALHO */
     .nav-links { display: none; }
     .menu-toggle { display: block; }
     
@@ -612,15 +650,7 @@ h1, h2, h3, h4 {
     }
     
     /* LAYOUTS FLEX (Empilha verticalmente) */
-    .bem-vindo-content {
-        flex-direction: column;
-        align-items: center;
-    }
-    .hero-ctas {
-        flex-direction: column; 
-        align-items: center;
-    }
-    .history-content {
+    .bem-vindo-content, .hero-ctas, .history-content {
         flex-direction: column;
         align-items: center;
     }
@@ -628,7 +658,7 @@ h1, h2, h3, h4 {
         text-align: center;
     }
 
-    /* RODAPÉ (Empilha verticalmente) */
+    /* RODAPÉ */
     .footer-content {
         flex-direction: column;
     }
