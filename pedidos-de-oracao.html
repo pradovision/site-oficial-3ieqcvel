@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quem Somos | 3ª IEQ CVEL</title>
+    <title>Pedidos de Oração | 3ª IEQ CVEL</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
     <link rel="stylesheet" href="styles/styles.css"> 
     <link rel="shortcut icon" href="assets/logos/logo.ico" type="image/x-icon">
 </head>
+<body class="dark-theme">
 
-<body>
-    <header id="main-header">
-        
+        <header id="main-header">
         <nav id="main-nav">
             
             <div class="header-social-icons">
@@ -33,17 +30,17 @@
                     <ul class="dropdown-menu">
                         <li><a href="quem-somos.html">Quem Somos</a></li>
                         <li><a href="nossos-pastores.html">Nossos Pastores</a></li>
-                        <li><a href="#ensino">Ensino</a></li>
+                        <li><a href="ensino.html">Ensino</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#">Nossas Células ▼</a>
                     <ul class="dropdown-menu"><li><a href="#">Rede Ebenézer 1</a></li><li><a href="#">Rede Ebenézer 2</a></li><li><a href="#">Rede Flecha no Alvo</a></li><li><a href="#">Rede Deus Conosco</a></li></ul>
                 </li>
                 <li class="dropdown"><a href="#">Conteúdo ▼</a>
-                    <ul class="dropdown-menu"><li><a href="#">Séries</a></li><li><a href="#">Palavras</a></li></ul>
+                    <ul class="dropdown-menu"><li><a href="#">Material</a></li><li><a href="index.html#palavra">Palavras</a></li></ul>
                 </li>
-                <li><a href="#">Agenda</a></li>
-                <li><a href="#">Encontre uma célula</a></li>
+                <li><a href="index.html#agenda">Agenda</a></li>
+                <li><a href="#">Faça Parte</a></li>
                 <li><a href="#">Contato</a></li>
             </ul>
             
@@ -56,72 +53,47 @@
     <main>
         
         <section class="page-hero">
-            <h1>QUEM SOMOS</h1>
-            <p>Conheça nossa missão, nossa visão e os valores que nos movem.</p>
+            <h1>PEDIDOS DE ORAÇÃO</h1>
+            <p>Deixe sua petição e nossa equipe de intercessão estará orando por sua vida.</p>
         </section>
 
-        <section id="missao-visao" class="content-section">
-            <div class="cards-mvv-grid">
+        <section id="prayer-form" class="content-section dark-bg-2">
+            <div class="form-container">
                 
-                <div class="mvv-card">
-                    <i class="fas fa-bullseye"></i>
-                    <h3>Nossa Missão</h3>
-                    <p>Glorificar a Deus, manifestar Sua glória aqui na terra, anunciando Jesus ao mundo, fazendo discípulos no poder do Espírito Santo, dando continuidade à missão de Jesus Cristo.</p>
-                </div>
+                <p class="instruction-text">Seja breve e direto em seu pedido. Todas as informações são confidenciais.</p>
+                
+                <form action="https://formspree.io/f/mdkwqope" method="POST" class="prayer-form">
+                    
+                    <div class="form-group">
+                        <label for="nome">Seu Nome (Opcional):</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome">
+                    </div>
 
-                <div class="mvv-card">
-                    <i class="fas fa-eye"></i>
-                    <h3>Nossa Visão</h3>
-                    <p>Ser um referencial de família, fazendo com que cada casa seja uma extensão da igreja, e cada discípulo um ministro de Cristo, alcançando a todos com amor.</p>
-                </div>
+                    <div class="form-group">
+                        <label for="email">Seu E-mail (Confidencial):</label>
+                        <input type="email" id="email" name="email" placeholder="Seu melhor email">
+                    </div>
 
-                <div class="mvv-card">
-                    <i class="fas fa-hands-helping"></i>
-                    <h3>Nossos Valores</h3>
-                    <p>Cremos no Discipulado e no Ensino Bíblico como ferramentas para o Fortalecimento das Famílias e a construção de Relacionamentos de Amor e mútua edificação.</p>
-                </div>
-            </div>
-        </section>
+                    <div class="form-group">
+                        <label for="telefone">Telefone (Para contato opcional):</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX">
+                    </div>
 
-        <section id="historia" class="content-section dark-bg-2">
-            <h2>Nossa História e Liderança</h2>
-            <div class="history-content">
-                <img src="assets/imagens/foto_pastora.jpg" alt="Foto da Pastora" class="history-image">
-                <div class="history-text">
-                    <h3>Pastora Suely Gauto Barbosa: Uma Trajetória de Fé e Liderança</h3>
+                    <div class="form-group">
+                        <label for="pedido">Seu Pedido de Oração:</label>
+                        <textarea id="pedido" name="pedido" rows="6" placeholder="Descreva seu pedido aqui..." required></textarea>
+                    </div>
                     
-                    <p class="quote">
-                        "Mesmo diante de momentos difíceis e de grande dor, a Pastora Suely manteve-se firme. Ela é um exemplo de guerreira que batalha com amor e carinho pelo seu rebanho, honrando o legado de sua fé."
-                    </p>
-                    
-                    <p>
-                        Nascida em Foz do Iguaçu - PR, em 06 de setembro de 1964, a Pastora Suely é filha de Catalina e Magalhães e cresceu ao lado de seus irmãos: Celso, Elio, Francisco, Joana, Angela e Paula.
-                    </p>
-                    
-                    <h3>A Força da Família e o Chamado</h3>
-                    
-                    <p>
-                        Sua família é a base e o pilar de seu ministério. É mãe do Pastor Gabriel, casado com a Pastora Vanessa, e da Pastora RaquelBernieri, casada com o Pastor Eliezer, os quais a presentearam com sua neta, Emanuelle.
-                    </p>
-                    
-                    <h3>Dedicação à 3ª Igreja do Evangelho Quadrangular</h3>
-                    
-                    <p>
-                        Em março de 2000, a Pastora Suely iniciou sua jornada na 3ª Igreja do Evangelho Quadrangular em Cascavel – PR, servindo como Pastora Auxiliar ao lado de seu esposo, o saudoso Pastor Eleno Pereira Barbosa.
-                        
-                        Um momento de grande provação e transição ocorreu em 2013, com a perda de seu esposo. O Pastor Eleno foi um homem de grande carisma e amor, que cumpriu sua missão e deixou um legado de fé.
-                    </p>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="confidencial" name="confidencial" value="sim">
+                        <label for="confidencial">Mantenha meu nome confidencial na intercessão.</label>
+                    </div>
 
-                    <h3>Liderança Firme e Visão Celular</h3>
-                    
-                    <p>Mantendo-se firme em sua vocação, a Pastora Suely assumiu com bravura a posição de Pastora Titular da 3ª Igreja do Evangelho Quadrangular, onde permanece até o momento.
-                    
-                    Com dedicação e esforço, ela implementou e consolidou a visão celular na igreja, o que a levou a ser nomeada Coordenadora Regional de Células.
-                    
-                    A história da Pastora Suely Gauto Barbosa é um testemunho de superação. Ela é uma verdadeira guerreira que, mesmo diante de momentos de dor, continua a caminhar e a liderar seu rebanho com amor, carinho e uma fé inabalável.
-                    </p>
-                    <a href="nossos-pastores.html" class="cta-button primary-cta">Conheça Nossos Pastores</a>
-                </div>
+                    <button type="submit" class="cta-button submit-button">
+                        <i class="fas fa-paper-plane"></i> Enviar Pedido
+                    </button>
+                </form>
+
             </div>
         </section>
 
@@ -145,7 +117,7 @@
                 <div class="link-column">
                     <h4>Conecte-se</h4>
                     <a href="pedidos-de-oracao.html">Pedidos de oração</a>
-                    <a href="https://wa.me/5545999803788">Fale conosco</a>
+                    <a href="https://wa.me/5545999803788" target="_blank">Fale conosco</a>
                     <a href="https://maps.app.goo.gl/YUsNHuhLa1bmDrJb9" target="_blank">Onde nos encontrar</a>
                 </div>
             </div>
@@ -180,6 +152,5 @@
     </footer>
 
     <script src="js/script.js"></script>
-
 </body>
 </html>

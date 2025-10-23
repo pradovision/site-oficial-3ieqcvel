@@ -365,6 +365,84 @@ h1, h2, h3, h4 {
     line-height: 1.5;
 }
 
+/* ====================================== */
+/* ESTILOS ESPECÍFICOS PARA DOWNLOAD CARDS (CORRIGIDO) */
+/* ====================================== */
+
+/* Container de Grid (Força 3 Colunas) */
+.cards-mvv-grid {
+    display: grid;
+    /* CHAVE: A regra 'cards-mvv-grid' já está no seu CSS e define 3 colunas */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* O Card Individual - Garantindo o Layout Compacto */
+.download-card {
+    background-color: var(--color-card-bg); 
+    border-top: 5px solid var(--color-accent); 
+    text-align: center;
+    
+    /* Layout Flexível COMPACTO (CHAVE) */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0; /* Remove padding que causava o excesso de tamanho */
+    overflow: hidden; 
+}
+
+/* ------------------ */
+/* Seção de Mídia (Capa do Plano) */
+/* ------------------ */
+.plan-media {
+    height: 180px; /* Altura da capa */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+.plan-media i {
+    font-size: 3em; 
+    color: white; 
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* ------------------ */
+/* Seção de Texto (abaixo da capa) */
+/* ------------------ */
+.plan-text-content {
+    padding: 20px 25px; 
+    flex-grow: 1; /* CHAVE: Preenche o espaço, empurrando o botão para a base */
+    text-align: left;
+}
+
+.download-card h3 {
+    text-align: left; 
+    margin-bottom: 10px;
+    color: white; 
+}
+
+.download-card p {
+    text-align: left;
+    color: #ccc;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 0; 
+}
+
+.download-card .cta-button-small {
+    /* Botão que ocupa 100% da largura na base do card */
+    margin-top: auto; 
+    width: 100%; 
+    border-radius: 0; 
+}
 
 /* ====================================== */
 /* 5. ESTILOS DE PÁGINAS SECUNDÁRIAS */
@@ -464,6 +542,20 @@ h1, h2, h3, h4 {
     color: #ccc; 
 }
 
+/* Estilo para o Aviso de PDF */
+.aviso-pdf {
+    text-align: center;
+    color: #aaa;
+    font-size: 0.9em;
+    padding-bottom: 20px; /* Adiciona um espaço na parte inferior da seção */
+}
+/* Estilizando o H2 da seção de Planos de Leitura que foi adicionado */
+.h2-plano-leitura {
+    color: white; /* Garante que o título da seção seja branco */
+    text-align: center;
+    font-size: 2.5em; 
+    margin-bottom: 20px;
+}
 
 /* ====================================== */
 /* 6. RODAPÉ */
@@ -710,4 +802,87 @@ h1, h2, h3, h4 {
     .hero-text p {
         font-size: 1em;
     }
+}
+
+/* ====================================== */
+/* ESTILOS DO FORMULÁRIO DE ORAÇÃO */
+/* ====================================== */
+
+.form-container {
+    max-width: 600px; /* Limita a largura do formulário para o centro */
+    margin: 0 auto;
+    background-color: var(--color-card-bg);
+    padding: 40px;
+    border-radius: 8px;
+    border-top: 5px solid var(--color-accent);
+}
+
+.instruction-text {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.prayer-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Estilo para Inputs (Caixas de texto e textarea) */
+.prayer-form input[type="text"],
+.prayer-form input[type="email"],
+.prayer-form input[type="tel"],
+.prayer-form textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #333; /* Fundo escuro para combinar */
+    border: 1px solid #555;
+    color: white;
+    border-radius: 4px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura */
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.prayer-form textarea {
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+}
+
+.prayer-form input:focus,
+.prayer-form textarea:focus {
+    border-color: var(--color-accent); /* Borda laranja ao focar */
+    outline: none;
+}
+
+/* Checkbox e Label */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group label {
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-left: 10px;
+    color: #aaa;
+}
+
+/* Botão de Envio */
+.submit-button {
+    margin-top: 10px;
+    align-self: flex-start; /* Alinha o botão à esquerda */
+    padding: 12px 30px;
+    font-size: 1.1em;
 }
