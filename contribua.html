@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedidos de Oração | 3ª IEQ CVEL</title>
+    <title>Contribua | Doação PIX | 3ª IEQ CVEL</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/styles.css"> 
     <link rel="shortcut icon" href="assets/logos/logo.ico" type="image/x-icon">
 </head>
+
 <body class="dark-theme">
 
         <header id="main-header">
@@ -49,55 +50,81 @@
             <button class="menu-toggle">☰</button>
         </nav>
     </header>
-
+    
     <main>
         
         <section class="page-hero">
-            <h1>PEDIDOS DE ORAÇÃO</h1>
-            <p>Deixe sua petição e nossa equipe de intercessão estará orando por sua vida.</p>
+            <h1>CONTRIBUA COM O REINO</h1>
+            <p>Sua fidelidade nos ajuda a avançar a obra. Escolha a forma de contribuição.</p>
         </section>
 
-        <section id="prayer-form" class="content-section dark-bg-2">
-            <div class="form-container">
+        <section id="pix-doacao" class="content-section dark-bg-2">
+            
+            <div class="pix-container">
                 
-                <p class="instruction-text">Seja breve e direto em seu pedido. Todas as informações são confidenciais.</p>
-                
-                <form action="https://formspree.io/f/mdkwqope" method="POST" class="prayer-form">
+                <div class="pix-instrucoes">
+                    <h2>PIX</h2>
                     
-                    <div class="form-group">
-                        <label for="nome">Seu Nome:</label>
-                        <input type="text" id="nome" name="nome" placeholder="Seu nome">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Seu E-mail (Confidencial):</label>
-                        <input type="email" id="email" name="email" placeholder="Seu melhor email">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="telefone">Telefone (Caso autorize entrarmos em contato):</label>
-                        <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="pedido">Seu Pedido de Oração:</label>
-                        <textarea id="pedido" name="pedido" rows="6" placeholder="Descreva seu pedido aqui..." required></textarea>
-                    </div>
+                    <p>Você pode contribuir de forma rápida e segura utilizando nossa chave PIX. Siga os passos:</p>
                     
-                    <div class="form-group checkbox-group">
-                        <input type="checkbox" id="confidencial" name="confidencial" value="sim">
-                        <label for="confidencial">Mantenha meu nome confidencial na intercessão.</label>
-                    </div>
-
-                    <button type="submit" class="cta-button submit-button">
-                        <i class="fas fa-paper-plane"></i> Enviar Pedido
+                    <ol class="pix-passos">
+                        <li><strong>Passo 1:</strong> Abra o aplicativo do seu banco.</li>
+                        <li><strong>Passo 2:</strong> Escolha a opção de pagamento via PIX.</li>
+                        <li><strong>Passo 3:</strong> Use a chave fornecida.</li>
+                        <li><strong>Passo 4:</strong> Insira o valor da sua oferta ou dízimo.</li>
+                    </ol>
+                    
+                    <h4>Chave PIX Oficial (CNPJ):</h4> 
+                    
+                    <p class="pix-chave-valor" id="chave-pix-texto">
+                        62.955.505/0473-92
+                    </p>
+                    
+                    <button class="cta-button" onclick="copiarChavePix()">
+                        <i class="fas fa-copy"></i> Copiar Chave
                     </button>
-                </form>
-
+                    <span id="copy-message" style="color:var(--color-accent); margin-left: 15px; display:none;">Chave copiada!</span>
+                </div>
+                
+                <div class="pix-qrcode">
+                    <h2>QR Code</h2>
+                    
+                    <img src="assets/imagens/Chave PIX.jpeg" alt="QR Code para pagamento PIX" class="qrcode-img">
+                    
+                    <p class="qrcode-aviso">
+                        Aponte a câmera do seu celular para o código acima.
+                    </p>
+                </div>
+                
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2>Dados da Conta</h2>
+            
+            <p class="aviso-branco-contribua">Confira as informações antes de realizar a transferência:</p>
+            
+            <div class="dados-bancarios-wrapper">
+                <div class="dados-bancarios">
+                    <p><strong>Banco:</strong> Cora SCFI (403)</p>
+                    <p><strong>CNPJ:</strong> 62.955.505/0473-92</p>
+                    <p><strong>Nome:</strong> Igreja do Evangelho Quadrangular</p>
+                </div>
             </div>
         </section>
 
     </main>
+
+    <script>
+        function copiarChavePix() {
+            const chave = "62.955.505/0473-92"; // A chave PIX
+            navigator.clipboard.writeText(chave).then(() => {
+                const msg = document.getElementById('copy-message');
+                msg.style.display = 'inline';
+                setTimeout(() => msg.style.display = 'none', 2000);
+            });
+        }
+    </script>
 
     <footer id="main-footer">
         <div class="footer-content">
@@ -151,6 +178,15 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+        function copiarChavePix() {
+            const chave = "62.955.505/0473-92"; // A chave PIX
+            navigator.clipboard.writeText(chave).then(() => {
+                const msg = document.getElementById('copy-message');
+                msg.style.display = 'inline';
+                setTimeout(() => msg.style.display = 'none', 2000);
+            });
+        }
+    </script>
 </body>
 </html>
